@@ -1,13 +1,13 @@
 ##Valida el parametro state de la funcion best
 checkState <- function(state, hospitalData){
   states <- getStates(hospitalData)
-  state %in% states
+  if( !(state %in% states) ) stop("invalid state")
 }
 
 ##Valida el parametro outcome de la funcion best
 checkOutcome <- function(outcome){
   validOutcome <- c("heart failure", "heart attack", "pneumonia")
-  outcome %in% validOutcome
+  if( !(outcome %in% validOutcome) ) stop("invalid outcome")
 }
 
 ## Retorna los estados

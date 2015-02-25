@@ -5,12 +5,8 @@ best <- function(state = "", outcome = "") {
     outcomeData = read.csv("outcome-of-care-measures.csv")
   
   ## Check that state and outcome are valid
-    if( !checkState(state, hospitalData) ){
-      stop("invalid state")
-    }
-    if( !checkOutcome(outcome) ){
-      stop("invalid outcome")
-    }
+    checkState(state, hospitalData)
+    checkOutcome(outcome) 
   
   ##Return hospital name in that state with lowest 30-day death rate
     ##obteniendo los hospitales por estado
