@@ -10,14 +10,18 @@ rankhospital <- function(state, outcome, num = "best"){
   
   ##Return hospital name in that state with te given rank 30-day death rate
     hospitales <- getHostipalByState(state, outcomeData)
-    index <- getIndexTable(outcome)
+    index <- getIndexTableP2(outcome)
     raw <- as.numeric(as.character(hospitales[,index]))
     orderValues <- unique(sort(raw, decreasing = FALSE))
-
+    print(orderValues) ##DEBUG
     value <- orderValues[ valNum(num,orderValues) ] 
   
     if( !is.na( value ) ){
       print(value)##DEBUG
+      
+      raw <- as.numeric(as.character(hospitales[,index]))      
+      print(hospitales[c(which(raw==value)),2])
+      
     }else{
       NA
     }
