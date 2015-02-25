@@ -16,7 +16,8 @@ best <- function(state = "", outcome = "") {
     hospitales <- getHostipalByState(state, outcomeData)
     min <-getMinOutcome(outcome,hospitales)
     resp <- getHospitalByMin(outcome,min, hospitales)
-    print(resp[1])
+    ##print(resp[1])
+    as.character(resp)
   
 }
 
