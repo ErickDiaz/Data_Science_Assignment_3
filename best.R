@@ -23,12 +23,6 @@ getHostipalByState <- function(state, hospitalData){
   subset( hospitalData,State == state )
 }
 
-getIndexTable <- function(outcome){
-  v <- c(19,13,25)
-  names(v) <- c("heart failure", "heart attack", "pneumonia")   
-  v[outcome]
-}
-
 getMinOutcome <- function(outcome, hospitales){  
    index <- getIndexTable(outcome)
    raw <- as.numeric(as.character(hospitales[,index]))

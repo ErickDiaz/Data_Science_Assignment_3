@@ -10,6 +10,13 @@ checkOutcome <- function(outcome){
   if( !(outcome %in% validOutcome) ) stop("invalid outcome")
 }
 
+## Retorna el numero de columna para el outcome
+getIndexTable <- function(outcome){
+  v <- c(19,13,25)
+  names(v) <- c("heart failure", "heart attack", "pneumonia")   
+  v[outcome]
+}
+
 ## Retorna los estados
 getStates <- function(rawData){
   unique(rawData[,7])
