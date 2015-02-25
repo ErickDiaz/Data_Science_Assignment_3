@@ -9,8 +9,9 @@ rankhospital <- function(state, outcome, num = "best"){
     checkOutcome(outcome) 
   
   ##Return hospital name in that state with te given rank 30-day death rate
+    hospitales <- getHostipalByState(state, outcomeData)
     index <- getIndexTable(outcome)
-    raw <- as.numeric(as.character(outcomeData[,index]))
+    raw <- as.numeric(as.character(hospitales[,index]))
     orderValues <- unique(sort(raw, decreasing = FALSE))
 
     value <- orderValues[ valNum(num,orderValues) ] 
