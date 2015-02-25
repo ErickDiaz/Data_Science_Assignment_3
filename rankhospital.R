@@ -20,7 +20,8 @@ rankhospital <- function(state, outcome, num = "best"){
       print(value)##DEBUG
       
       raw <- as.numeric(as.character(hospitales[,index]))      
-      print(hospitales[c(which(raw==value)),2])
+      values <- raw[!is.na(raw)]
+      print(hospitales[c(which(values==value)),2])
       
     }else{
       NA
