@@ -19,10 +19,6 @@ best <- function(state = "", outcome = "") {
 }
 
 
-getHostipalByState <- function(state, hospitalData){
-  subset( hospitalData,State == state )
-}
-
 getMinOutcome <- function(outcome, hospitales){  
    index <- getIndexTable(outcome)
    raw <- as.numeric(as.character(hospitales[,index]))

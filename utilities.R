@@ -21,3 +21,8 @@ getIndexTable <- function(outcome){
 getStates <- function(rawData){
   unique(rawData[,7])
 }
+
+##Retorna los hospitalas de un estado
+getHostipalByState <- function(state, hospitalData){
+  subset( hospitalData,State == state )
+}
