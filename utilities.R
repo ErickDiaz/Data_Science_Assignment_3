@@ -18,7 +18,7 @@ getIndexTable <- function(outcome){
 }
 
 getIndexTableP2 <- function(outcome){
-  v <- c(17,11,23)
+  v <- c(17,13,23)
   names(v) <- c("heart failure", "heart attack", "pneumonia")   
   v[outcome]
 }
